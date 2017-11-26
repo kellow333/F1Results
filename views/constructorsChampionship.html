@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="jumbotron text-center">
+			<h1>Constructors Championship Page</h1>			
+		</div>
+
+		<a href="#/driversChampionship" class="view-switch btn">Drivers Championship</a>
+
+		<select ng-model="year" ng-change="change(year)">
+			<option ng-selected="{{year == 2012}}">2012</option>
+			<option ng-selected="{{year == 2013}}">2013</option>
+			<option ng-selected="{{year == 2014}}">2014</option>
+			<option ng-selected="{{year == 2015}}">2015</option>
+			<option ng-selected="{{year == 2016}}">2016</option>
+		</select>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th colspan="3">Constructor Championship Standings</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="team in constructorList">
+					<td>{{team.position}}</td>
+					<td>
+						<img src="img/flags/{{team.Constructor.nationality}}.png" alt="{{team.Constructor.nationality}} flag">
+						<!-- <a href="#/teams/{{team.Constructor.constructorId}}">{{team.Constructor.name}}</a> -->
+						{{team.Constructor.name}}
+					</td>
+					<td>{{team.points}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<img src="img/loading.gif" id="loading-gif" alt="loading, please wait">
+	</div>
+</div>
